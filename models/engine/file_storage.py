@@ -66,3 +66,13 @@ class FileStorage:
     @property
     def cities(self):
         """"""
+    
+    @property
+    def reviews(self, place_id=None):
+        """gets the list of reviews for place"""
+        if place_id is not None:
+            if place_id in self.all():
+                place = self.all()[f'Place{place_id}']
+                if hasattr(place, 'reviews'):
+                    return place.reviews
+        return []
