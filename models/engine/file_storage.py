@@ -62,11 +62,7 @@ class FileStorage:
             self.all().pop(obj.to_dict()['__class__'] + '.' + obj.id)
         else:
             self.all().clear()
-
-    @property
-    def cities(self):
-        """"""
-    
+ 
     @property
     def reviews(self, place_id=None):
         """gets the list of reviews for place"""
