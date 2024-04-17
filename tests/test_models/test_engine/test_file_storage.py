@@ -107,3 +107,11 @@ class test_fileStorage(unittest.TestCase):
         from models.engine.file_storage import FileStorage
         print(type(storage))
         self.assertEqual(type(storage), FileStorage)
+
+    def test_delete(self):
+            """Test the delete method of the FileStorage class"""
+            self.assertEqual(len(self.storage.all()), 5)
+            self.storage.delete(self.user)
+            self.assertEqual(len(self.storage.all()), 4)
+            self.storage.delete()
+            self.assertEqual(len(self.storage.all()), 0)
