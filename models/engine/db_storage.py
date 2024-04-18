@@ -13,11 +13,14 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
-user = env['HBNB_MYSQL_USER']
-pwd = env['HBNB_MYSQL_PWD']
-host = env['HBNB_MYSQL_HOST']
-db = env['HBNB_MYSQL_DB']
-Env = env['HBNB_ENV']
+try:
+	user = env['HBNB_MYSQL_USER']
+	pwd = env['HBNB_MYSQL_PWD']
+	host = env['HBNB_MYSQL_HOST']
+	db = env['HBNB_MYSQL_DB']
+	Env = env['HBNB_ENV']
+except KeyError:
+  pass
 
 
 class DBStorage:
