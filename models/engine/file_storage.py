@@ -52,10 +52,9 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
-
 
     def delete(self, obj=None):
         """Deletes object from storage dictionary"""
@@ -64,7 +63,6 @@ class FileStorage:
         else:
             self.all().clear()
 
-    """
     @property
     def reviews(self, place_id=None):
         gets the list of reviews for place
@@ -74,4 +72,3 @@ class FileStorage:
                 if hasattr(place, 'reviews'):
                     return place.reviews
         return []
-    """
