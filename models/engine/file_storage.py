@@ -56,7 +56,7 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
-h = 5
+
     def delete(self, obj=None):
         """Deletes object from storage dictionary"""
         if obj is not None:
@@ -64,13 +64,14 @@ h = 5
         else:
             self.all().clear()
 
- 
+    """
     @property
     def reviews(self, place_id=None):
-        """gets the list of reviews for place"""
+        gets the list of reviews for place
         if place_id is not None:
             if place_id in self.all():
                 place = self.all()[f'Place{place_id}']
                 if hasattr(place, 'reviews'):
                     return place.reviews
         return []
+    """
