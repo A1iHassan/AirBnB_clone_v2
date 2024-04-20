@@ -4,6 +4,7 @@
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
 
 -- creating user hbnb_dev
+
 CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
 
 -- granting all privileges on hbnb_dev_db
